@@ -88,6 +88,9 @@ public class Ex04_swltch {
 		
 		int month = 12;
 		
+		System.out.println((month - 1) / 3 + 1+ "분기");
+		
+		/*
 		switch((month - 1) / 3)	{
 		case 0: 
 			System.out.println("1분기");
@@ -102,6 +105,7 @@ public class Ex04_swltch {
 			System.out.println("4분기");
 			break;
 			}	
+			*/
 	}
 		
 		

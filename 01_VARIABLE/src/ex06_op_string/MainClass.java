@@ -41,7 +41,7 @@ public class MainClass {
 		System.out.println(str1 == "hello"); // true 
 		
 		String str2 = new String("hello");
-		System.out.println(str2 =="hello"); 
+		System.out.println(str2 =="hello"); // false
 		
 		
 	}
