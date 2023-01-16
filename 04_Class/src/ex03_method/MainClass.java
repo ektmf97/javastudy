@@ -18,19 +18,36 @@ public class MainClass {
 		
 		CoffeeMachine coffeeMachine = new CoffeeMachine(); // 커피 자판기 1대 
 		
-		CoffeeAndChange coffeeAndChange = coffeeMachine.buyCoffee(1000, 1);
+		CoffeeAndChange coffeeAndChange = coffeeMachine.buyCoffee(500, 1);
 		System.out.println(coffeeAndChange.coffee);
 		System.out.println(coffeeAndChange.change);
 		
 		System.out.println(coffeeMachine.moneypot);
 		
-		
-		
-		
 	}
 
+	public static void ex03() {
+		
+		Car car = new Car(); 
+		
+		car.addoil1(100);
+		
+		for(int n = 0; n < 51; n++) {
+			car.pushAcce1();
+		}
+		
+		System.out.println(car.oilPot);
+		System.out.println(car.carSpeed);
+		
+		for(int n = 0; n < 11; n++) {
+			car.pushBrake();
+		}
+		System.out.println(car.oilPot);
+		System.out.println(car.carSpeed);
+		
+	}
 	public static void main(String[] args) {
-		ex02();
+		ex03();
 		
 
 	}
