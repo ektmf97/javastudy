@@ -1,6 +1,6 @@
-package exam;
+package ex01_String;
 
-public class MainClass {
+public class Ex01_String {
 
 	// 문제1. int number의 첫 번째 글자가 1,3,5이면 "남자", 2,4,6이면 "여자"를 출력하시오.
 	// int number의 첫 번째 글자는 항상 1 ~ 6 사이의 정수라고 가정한다.
