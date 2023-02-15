@@ -1,5 +1,7 @@
 package practice02;
 
+import java.util.Scanner;
+
 public class MainClass {
 
 	// 문제1. 통장(balance)에 최초 5000원이 있다.
@@ -29,6 +31,29 @@ public class MainClass {
 	// 정답. 총 5번만에 성공.
 	public static void ex02() {
 		
+		Scanner sc = new Scanner(System.in);
+	      int random = (int) ((Math.random() * 10000) + 1);
+	      int count = 0; // 몇 번만에 실행 
+	      int result = 0; // 내가 입력할 수 있는 숫자
+	      while(true) {
+	         
+	         System.out.println("입력 >>> ");
+	         result = sc.nextInt();
+	         count++;
+	         
+	         if(result < 1 || result > 10000) {
+	            count--;
+	            System.out.println("다시 입력하시오.");
+	         }else if(result > random) {
+	            System.out.println("Down!");
+	         }else if(result < random){
+	            System.out.println("up!");
+	         }else if(result == random) {
+	            System.out.println("정답. 총 " + count + "번만에 성공.");
+	            break;
+	         }
+	      }
+	      sc.close();
 	}
 	
 	// 문제3. 자동으로 진행되는 윷 던지기를 구현하시오. 윷이나 모가 나오면 추가로 던지시오.
@@ -40,6 +65,25 @@ public class MainClass {
 	// "모", "윷", "도", 10칸 이동한다.
 	public static void ex03() {
 		
+		boolean run = true;
+		
+		String[] yut = {"", "도", "개", "걸", "윷", "모"};
+		int move = 0;
+		while(run) {
+			int num = (int)(Math.random() * 5 + 1);
+			switch(num) {
+			case 1: case 2: case 3:
+				move += num;
+				System.out.println("\"" + yut[num] + "\", " + move + "칸 이동한다.");
+				run = false;  // 트루
+				break; //리턴
+			case 4: case 5:
+				move += num;
+				System.out.print("\"" + yut[num] + "\", ");
+				break;//리턴
+			}
+		}
+	
 	}
 	
 	// 문제4. 0~9 사이 난수를 100개 생성하시오.
@@ -188,7 +232,7 @@ public class MainClass {
 
 		
 		public static void main(String[] args) {
-			ex10();
+			ex03();
 		}
 
 	}

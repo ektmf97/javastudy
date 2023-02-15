@@ -19,8 +19,8 @@ public class EX01_Math_random {
 
 		/*
 		 	난수 생성하기
-		 	Matr.random()				0.0 <= n < 1.0
-		 	Matr.random() * 3           0.0 <= n < 3.0
+		 	Math.random()				0.0 <= n < 1.0
+		 	Math.random() * 3           0.0 <= n < 3.0
 		 	(int)(Math.random() * 3		  0 <= n < 3		
 		 	(int)(Math.random() * 3) + 1  1 <= n < 4     // 1부터 3개 
 		 	----------------------------------------------------------

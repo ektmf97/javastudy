@@ -1,5 +1,7 @@
 package practice01;
 
+import java.util.Scanner;
+
 public class MainClass {
 	// 문제1. 가위바위보
 		// 실행
@@ -7,19 +9,50 @@ public class MainClass {
 		// 당신은 가위, 컴퓨터는 보, 이겼습니다.
 		// Hint : 가위는 0, 바위는 1, 보는 2로 처리한다.
 		public static void ex01() {
-			
+			String[] playar = {"가위", "바위", "보"};
+			Scanner sc = new Scanner(System.in);
+			System.out.println("가위바위보 >>>");
 		}
 		
 		// 문제2. 친구 3명을 저장할 수 있는 배열을 생성하고 임의의 값으로 초기화하시오.
 		// 새로 사귄 친구의 수를 입력 받아서 기존 친구들이 저장된 배열의 길이를 새로 사귄 친구의 수만큼 늘리시오.
 		public static void ex02() {
+		
+			String[] friendsList = {"케리아","데프트","라스칼"};
+			Scanner sc = new Scanner(System.in);
+			System.out.println("새로 사귄 친구의 수는? >>>");
+			int newFriendCount = sc.nextInt();
+			String[] a = new String[friendsList.length + newFriendCount];
+			
+			for(int i = 0; i < friendsList.length; i++) {
+				a[i] = friendsList[i];
+				}
+			friendsList = a;
+			System.out.println(friendsList.length);
+			sc.close();
+			
+			/*
+			 	1. 스트링 배열에 친구 3명을 저장할 수 있는 배열을 생성
+			 	2. 입력 받아서 저장 해야 하니까 스캐너 생성
+			 	3. 스캐너 실행시 첫 문장 출력문구 입력
+			 	4. 새로 사귄 친구의 수를 세어줄 newfriendCount 
+			 		스캐너로 입력받은 친구들을 newfriendCount에 저장
+			 	5. 새로 사귄 친구들의 수를 입력 받아서 배열의 길이를 늘려줘야 하므로
+			 		새로운 배열 생성해준다
+			 	6. 
+			 	
+			 */
+			
 			
 		}
-		
+
 		// 문제3. Scanner 클래스의 next() 메소드를 이용해서 사용자로부터 문자열을 계속 입력 받는다.
 		// 사용자가 "종료" 문자열을 입력하면 더 이상 입력 받지 않는다.
 		// 총 몇 번만에 종료되었는지 그 횟수를 마지막에 출력한다.
 		public static void ex03() {
+			Scanner sc = new Scanner(System.in);
+			String str = sc.next();
+			
 			
 		}
 
@@ -32,8 +65,19 @@ public class MainClass {
 		// 오답입니다.
 		public static void ex04() {	
 			
-		}
-		
+		Scanner sc = new Scanner(System.in);
+		String city = null;
+		do {
+			if(city != null){
+			System.out.println("오답입니다.");
+			}
+			System.out.println("질문 : 대한민국의 수도는? >>>");
+			city = sc.next();
+		} while ( !city.equals("서울") && !city.equalsIgnoreCase("seoul"));
+		System.out.println("정답입니다.");
+		sc.close();
+			
+}
 		// 문제5. 평점 입력 받아서 해당 평점만큼 ★을 출력하시오.
 		// 평점은 1 ~ 5 사이 정수로 입력 받는데, 벗어난 범위는 다시 입력 받는다.
 		public static void ex05() {
@@ -44,6 +88,24 @@ public class MainClass {
 		// 사용자로부터 비밀번호를 입력 받아서 "1234"와 같으면 "성공", "1234"가 아니면 다시 비밀번호를 입력 받도록 처리하시오.
 		// 비밀번호 입력은 최대 5번으로 제한하고, 5번의 입력이 모두 틀리면 최종적으로 "실패"를 출력하시오.
 		public static void ex06() {
+			
+			String pw = "1234";
+			String str = "";
+			
+			Scanner sc = new Scanner(System.in);
+			System.out.println("비밀번호를 입력하세요 >>>");
+			str = sc.next();
+		
+			for(int i = 0; i < 5; i++) {
+			if( pw.equals(str) ) {
+				System.out.println("성공");
+				sc.close();
+			}
+			else {
+				System.out.println("실패");
+			}
+			
+			}
 			
 		}		
 		
@@ -77,6 +139,13 @@ public class MainClass {
 		// 변환 후 파일명 = happy_1658792128410.jpg
 		public static void ex09() {
 			
+			Scanner sc = new Scanner(System.in);
+			System.out.println("변환 전 파일명 >>> ");
+			String file = sc.next();
+			
+			
+			System.currentTimeMillis();
+			System.out.println();
 		}
 		
 		// 문제10. Scanner 클래스의 next() 메소드를 이용해서 사람 이름을 입력 받은 뒤
@@ -90,10 +159,45 @@ public class MainClass {
 		// 처음 뵙겠습니다
 		public static void ex10() {
 			
+			String[] friends = {"정우성","송강"};
+			String name = "";
+			
+			Scanner sc = new Scanner(System.in);
+			System.out.println("이름 입력 >>>");
+			name = sc.next();
+			if(friends[0].equals(name) || name.equals(friends[1])) {
+				System.out.println("반갑다 친구야");
+			} else {
+				System.out.println("처음 뵙겠습니다.");
+			}
+			sc.close();
 		}
+			
+			/*
+			String[] friends = {"정우성","송강","차은우"};
+			String name = "";
+			
+			Scanner sc = new Scanner(System.in);
+			System.out.println("이름 입력 >>>");
+			name = sc.next();
+			
+			for(int i = 0; i < friends.length; i++) {
+				if(friends[i].equals(name)) {
+				}
+				System.out.println("반갑다 친구야");
+				break;
+			} else {
+				System.out.println("처음 뵙겠습니다.");
+				break;
+			}
+		}
+			sc.close();
+			 
+		}
+		*/
 		
 	public static void main(String[] args) {
-		ex10();
+		ex02();
 
 	}
 
